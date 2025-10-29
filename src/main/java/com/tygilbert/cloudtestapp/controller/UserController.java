@@ -47,5 +47,18 @@ public class UserController {
         return "redirect:/users";
     }
 
+    @GetMapping("/edit/{id}")
+    public String editUser(@PathVariable int id, Model model) {
+        User user = repo.findById(id).orElseThrow(() -> new IllegalArgumentException("Invalid user Id:" + id));
+        model.addAttribute("user", user);
+        return "edit-user";
+    }
+
+    @PostMapping("/update/{id}")
+    public String updateUser(@PathVariable int id, @ModelAttribute User user) {
+        user.setId(id);
+        repo.save(user);
+        return "redirect:/users";
+    }
 }
 
