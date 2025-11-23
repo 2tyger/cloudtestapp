@@ -54,7 +54,7 @@
             <version>1.21.0</version>
         </dependency>
 
-        <!-- Jakarta XML Bind (Spring Boot 3 requires jakarta.*) -->
+        <!-- Jakarta XML Bind -->
         <dependency>
             <groupId>jakarta.xml.bind</groupId>
             <artifactId>jakarta.xml.bind-api</artifactId>
